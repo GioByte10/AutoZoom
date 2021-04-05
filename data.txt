@@ -1,14 +1,20 @@
-C:\Users\super\Desktop\Giovanni\Programacion\Lenguajes\C++\AutoZoom\AutoZoom.exe
+C:\Users\super\Desktop\Giovanni\Programacion\Lenguajes\AutoZoom\AutoZoom.exe
+*spanish
+*
+*Reportar cualquier problema/bug/sugerencia/etc a gvanni.bernal10@gmail.com
+*
+*No modificar ninguna linea que contenga asterisco (*), ni la primera linea
+*Favor de maximizar la ventana para ver todas las columnas
+*Asegurarse de que el link de zoom contega https://
+*
+*
+Quisieras ser notificado antes de entrar a la sesion?: no
+En caso de que si, cuantos minutos antes?: 5
+*
+*zoom link			 									hora (formato 24 horas)			dia (e.g lunes, martes...)
+https://zoom/1													1:00					Lunes, Martes
+
+https://zoom/2													2:00					Jueves, Viernes
 
 
-
-
-
-uchkvcv
-dv
-vdf
-v
-vd
-vdfv
-vd
-vd
+https://zoom/3													3:00					Miercoles
