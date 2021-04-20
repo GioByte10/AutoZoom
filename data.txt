@@ -9,9 +9,24 @@ C:\Users\super\Desktop\Giovanni\Programacion\Lenguajes\AutoZoom\AutoZoom.exe
 *
 *
 Quisieras ser notificado antes de entrar a la sesion?: si
-En caso de que si, cuantos minutos antes?: 7
+En caso de que si, cuantos minutos antes?: 5
 *
 *zooom link			 									hora (formato 24 horas)			dia (e.g lunes, martes...)
-https://zoom.us/j/7486659919?pwd=MlB2SXZCVDlLcWNOYitWYUVvV2h1dz09						20:21 					sunday
+https://lausd.zoom.us/j/81817659367?pwd=V1hpNGtaVjNiTVVCWk5CdGlnSjBxdz09&uname=GIOVANNI+BERNAL+RAMIREZ		10:00 					martes, jueves
 
-https://zoom/1													20:30					monday
+https://lausd.zoom.us/j/86020894444?pwd=aFJCaExHUTVGNVhvQ01RQm1MZHFRUT09&uname=GIOVANNI+BERNAL+RAMIREZ          10:55					martes, jueves
+
+https://lausd.zoom.us/j/2362879788										11:50					martes, miercoles, jueves, viernes
+
+https://lausd.zoom.us/j/91663930573?pwd=NG1GRlVKQ0xpYXpzQmFpYjgxcllUUT09					13:30					martes, jueves
+
+https://lausd.zoom.us/j/2362879788										14:25					martes, jueves
+
+https://lausd.zoom.us/j/86928490175?pwd=SjFhcktHZkpTbEZkenhHNkEzZzdDQT09&uname=GIOVANNI+BERNAL+RAMIREZ		10:00					miercoles, viernes
+
+https://lausd.zoom.us/j/93875265729										10:55					miercoles, viernes
+
+https://lausd.zoom.us/j/88596680184										13:30					miercoles, viernes
+
+https://lausd.zoom.us/j/88570734207?pwd=cXVVcXVvV3pxbzlmbWxQaXNuZU9Sdz09&uname=GIOVANNI+BERNAL+RAMIREZ		14:25					miercoles, viernes
+

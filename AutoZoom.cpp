@@ -357,11 +357,16 @@ bool GetInfo(int* lastWritten){
     getData.close();
 
     for(int i = 0; i < nLines; i++)
-        if(lines[i].find("notificado") != string::npos || lines[i].find("notified") != string::npos)
+        if(lines[i].find("notificado") != string::npos || lines[i].find("notified") != string::npos){
+
+                for(int j = 0; j < lines[i].length(); j++)
+                    lines[i][j] = tolower(lines[i][j]);
+
             if(lines[i].substr(lines[i].length() - 3, 3).find("si") != string::npos || lines[i].substr(lines[i].length() - 3, 3).find("yes") != string::npos){
               message = true;
               break;
             }
+        }
 
     line = "";
 
@@ -509,7 +514,7 @@ void SetLanguage(){
   spanish = false;
 
   if(getData.fail()){
-    MessageBox(NULL, fileFound, "AutoZoom Error", MB_ICONHAND);
+    MessageBox(NULL, "kkkkk", "AutoZoom Error", MB_ICONHAND);
     exit(1);
   }
 
@@ -665,7 +670,6 @@ int main(){
   while(true){
 
       ResetLists();
-
       SetLanguage();
 
       string txtPath = GetTxtPath();
