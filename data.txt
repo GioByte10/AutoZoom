@@ -8,8 +8,7 @@ C:\Users\super\Desktop\Giovanni\Programacion\Lenguajes\AutoZoom\AutoZoom.exe
 *Asegurarse de que el link de zoom contega https://
 *
 *
-Quisieras ser notificado antes de entrar a la sesion?: si
+Quisieras ser notificado antes de entrar a la sesion?: no
 En caso de que si, cuantos minutos antes?: 5
 *
-*zooom link			 									hora (formato 24 horas)			dia (e.g lunes, martes...)
-
+*zoom link			 									hora (formato 24 horas)			dia (e.g lunes, martes...)

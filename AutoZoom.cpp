@@ -7,7 +7,8 @@
 #include <ctime>
 using namespace std;
 
-LPCSTR fileFound, aError, zoomLinks, headers, notification1, notification2, notificationT;
+string fileFound, aError, zoomLinks, headers, dataTxt;
+LPCSTR notification1, notification2, notificationT;
 bool spanish = false;
 bool error = false;
 
@@ -47,10 +48,10 @@ string GetTxtPath(){
   ifstream inputData;
   string txtPath;
 
-  inputData.open("data.txt");
+  inputData.open(dataTxt);
 
   if(inputData.fail()){
-    MessageBox(NULL, fileFound, "AutoZoom Error", MB_ICONHAND);
+    MessageBox(NULL, (fileFound + "\n Code: 0x01").c_str(), "AutoZoom Error", MB_ICONHAND);
     exit(1);
   }
 
@@ -65,10 +66,10 @@ string GetTxtPath(){
 void UpdateTxt(){
 
   ifstream getData;
-  getData.open("data.txt");
+  getData.open(dataTxt);
 
   if(getData.fail()){
-    MessageBox(NULL, fileFound, "AutoZoom Error", MB_ICONHAND);
+    MessageBox(NULL, (fileFound + "\n Code: 0x02").c_str(), "AutoZoom Error", MB_ICONHAND);
     exit(1);
   }
 
@@ -91,7 +92,7 @@ void UpdateTxt(){
       getData.close();
 
       ofstream writeData;
-      writeData.open("data.txt");
+      writeData.open(dataTxt);
 
       lines[0] = GetFilePath();
 
@@ -105,7 +106,7 @@ void UpdateTxt(){
   }else{
 
     ofstream writeData;
-    writeData.open("data.txt");
+    writeData.open(dataTxt);
 
     writeData << GetFilePath();
 
@@ -136,12 +137,12 @@ bool GetLastWritten(int *lastWritten){
   file = CreateFile(txtPath.c_str(), GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
 
   if(file == INVALID_HANDLE_VALUE){
-    MessageBox(NULL, aError, "AutoZoom Error", MB_ICONHAND);
+    MessageBox(NULL, (aError + "\n Code: 0x03").c_str(), "AutoZoom Error", MB_ICONHAND);
     exit(1);
   }
 
   if(!GetFileTime(file, NULL, NULL, &tWritten)){
-    MessageBox(NULL, aError, "AutoZoom Error", MB_ICONHAND);
+    MessageBox(NULL, (aError + "\n Code: 0x04").c_str(), "AutoZoom Error", MB_ICONHAND);
     exit(1);
   }
 
@@ -187,10 +188,10 @@ bool GetLastWritten(int *lastWritten){
 bool CheckTxt(){
 
   ifstream getData;
-  getData.open("data.txt");
+  getData.open(dataTxt);
 
   if(getData.fail()){
-    MessageBox(NULL, fileFound, "AutoZoom Error", MB_ICONHAND);
+    MessageBox(NULL, (fileFound + "\n Code: 0x05").c_str(), "AutoZoom Error", MB_ICONHAND);
     exit(1);
   }
 
@@ -269,14 +270,14 @@ string GetDays(string daysL, string word){
 
 void ResetTxt(int* lastWritten){
 
-  int msbID = MessageBox(NULL, headers, "AutoZoom Error", MB_ICONEXCLAMATION | MB_YESNO);
+  int msbID = MessageBox(NULL, (headers + "\n Code: 0x06").c_str(), "AutoZoom Error", MB_ICONEXCLAMATION | MB_YESNO);
 
   if(msbID == IDYES){
     ofstream newFile;
-    newFile.open("data.txt", ios::out | ios::trunc);
+    newFile.open(dataTxt, ios::out | ios::trunc);
     newFile.close();
 
-    newFile.open("data.txt");
+    newFile.open(dataTxt);
 
     if(spanish){
 
@@ -332,10 +333,10 @@ bool GetInfo(int* lastWritten){
   bool message = false;
 
   ifstream getData;
-  getData.open("data.txt");
+  getData.open(dataTxt);
 
   if(getData.fail()){
-    MessageBox(NULL, fileFound, "AutoZoom Error", MB_ICONHAND);
+    MessageBox(NULL, (fileFound + "\n Code: 0x07").c_str(), "AutoZoom Error", MB_ICONHAND);
     exit(1);
   }
 
@@ -464,7 +465,7 @@ bool GetInfo(int* lastWritten){
       }
 
       }else{
-        MessageBox(NULL, zoomLinks, "AutoZoom Error", MB_ICONEXCLAMATION);
+        MessageBox(NULL, (zoomLinks + "\n Code: 0x08").c_str(), "AutoZoom Error", MB_ICONEXCLAMATION);
         error = true;
 
         while(!GetLastWritten(lastWritten)){
@@ -509,12 +510,12 @@ void ShowLists(){
 void SetLanguage(){
 
   ifstream getData;
-  getData.open("data.txt");
+  getData.open(dataTxt);
 
   spanish = false;
 
   if(getData.fail()){
-    MessageBox(NULL, "kkkkk", "AutoZoom Error", MB_ICONHAND);
+    MessageBox(NULL, "Error de inicio\nStartUp Error\n Code: 0x00", "AutoZoom Error", MB_ICONHAND);
     exit(1);
   }
 
@@ -669,11 +670,22 @@ int main(){
 
   while(true){
 
+      TCHAR* filePath = GetFilePath();
+      dataTxt = "";
+
+      for(int i = 0; i < lstrlen(filePath) - 12; i++){
+        dataTxt += filePath[i];
+
+        if(filePath[i] == '\\')
+          dataTxt += '\\';
+      }
+
+      dataTxt += "data.txt";
+
       ResetLists();
       SetLanguage();
 
       string txtPath = GetTxtPath();
-      TCHAR* filePath = GetFilePath();
 
       bool message = false;
       bool once = false;
@@ -689,7 +701,7 @@ int main(){
         txtPath = GetTxtPath();
 
         if(filePath != txtPath){
-            MessageBox(NULL, aError, "AutoZoom Error", MB_ICONHAND);
+            MessageBox(NULL, (aError + "\n Code: 0x09").c_str(), "AutoZoom Error", MB_ICONHAND);
             exit(1);
         }
       }
