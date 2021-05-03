@@ -36,7 +36,9 @@ The program also features 10 different error [MessageBox()](https://docs.microso
 Each MessageBox() contains a code and description of the error.
 
 <br>
+
 ---
+
 <br>
 
 ## Español
