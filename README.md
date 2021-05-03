@@ -63,9 +63,9 @@ De los archivos incluidos:
 * Hay un archivo que incluye las instrucciones de instalacion
 * **data.txt** contiene la informacion de las reuniones del usuario
 * **MessageBox.vbs** es usado para notificar al usuario previo a la reunion (si asi lo solicita el usuario), permitiendo que el proceso siga corriendo
-* Todos las tres librerias **.dll** son requeridas para el funcionamiento del programa
+* Todas las tres librerias **.dll** son requeridas para el funcionamiento del programa
 
-Los Links de Zoom son ejecutados usando el siguiente comando:
+Los Links de Zoom son ejecutados utilizando el siguiente comando:
 ```c++
 ShellExecute(nullptr, "open", linksS.c_str(), nullptr, nullptr, 0);
 ```
