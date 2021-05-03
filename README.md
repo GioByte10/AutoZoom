@@ -12,7 +12,7 @@ In order to do this, the main program, [**_AutoZoom.exe_**](https://github.com/G
 | Time          | In the 24 hour format; Must contain 4 digits; 2 → hour & 2 → minute.<br>e.g.  →  07:25  |
 | Days          | Days in which the meeting will be joined; Separated by coma<br>e.g.  →  monday, tuesday |
 
-AutoZoom then continuosly checks if the current time and day are equal to that of any Zoom Link, and if so, it executes the respective Link.
+AutoZoom then continuously checks if the current time and day are equal to that of any Zoom Link, and if so, it executes the respective Link.
 
 The user can also be notified **X** minutes before with a dialog box if requested in the **data.txt** file.
 
