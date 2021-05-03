@@ -20,4 +20,4 @@ where:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;_c_str()_ is added, as a **LPCSTR** variable is needed.<br>
 
 
-thus, links will be open in the user's default browser
+thus, links will be open in the user's default browser ->
