@@ -30,3 +30,6 @@ where:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;_c_str()_ is added, as a **LPCSTR** variable is needed.<br>
 
 Note that links will be open in the user's default browser
+
+The program also features 10 different error [MessageBox()](https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-messagebox), which without closing, the process cannot continue.<br>
+Each MessageBox() contains a code and description of the error
