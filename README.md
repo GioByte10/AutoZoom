@@ -1,6 +1,9 @@
 # AutoZoom
 ***Español*** [***abajo***](#español)
 
+If you would like to share any feedback or report a problem, please fill this [english form](https://forms.gle/L7LCvQ3MgRciuaqk8)<br>
+Si quisieras compartir retroalimentación o reportar algún problema, por favor llena esta [forma](https://forms.gle/n6eLG34afu7hrVXZ6) en español
+
 ## English
 AutoZoom is a C++ written program that automatically joins your Zoom meetings by running the Zoom Links. This is the link for the [English Version](https://github.com/GioByte10/AutoZoom/releases/tag/English)
 
