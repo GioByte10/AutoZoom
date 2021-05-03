@@ -1,3 +1,4 @@
 # AutoZoom
 
-AutoZoom is a program that automatically join your Zoom meeting by running the Zoom link
+## English
+AutoZoom is a program that automatically joins your Zoom meetings by running the Zoom links.
