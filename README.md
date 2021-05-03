@@ -81,6 +81,6 @@ donde:<br>
 
 Nótese que los Links serán ejecutados en el navegador por defecto del usuario.
 
-El programa también incluye 10 differentes [MessageBox()](https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-messagebox) de error, los cuales, si no son cerrados, el proceso no puede continuar.
+El programa también incluye 10 diferentes [MessageBox()](https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-messagebox) de error, los cuales, si no son cerrados, el proceso no puede continuar.
 
 Cada MessageBox() contiene un código y descripción del error.
