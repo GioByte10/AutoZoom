@@ -34,7 +34,8 @@ where:<br>
 
 Note that links will be open in the user's default browser
 
-The program also features 10 different error [MessageBox()](https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-messagebox), which without closing, the process cannot continue.<br>
+The program also features 10 different error [MessageBox()](https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-messagebox), which without closing, the process cannot continue.
+
 Each MessageBox() contains a code and description of the error.
 
 <br>
@@ -76,5 +77,6 @@ donde:<br>
 
 Notese que los Links seran ejecutados en el navegador por defecto del usuario.
 
-El programa tambien incluye 10 differentes [MessageBox()](https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-messagebox) de error, los cuales, si no son cerrados, el proceso no puede continuar.<br>
+El programa tambien incluye 10 differentes [MessageBox()](https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-messagebox) de error, los cuales, si no son cerrados, el proceso no puede continuar.
+
 Cada MessageBox() contiene un codigo y descripcion del error.
