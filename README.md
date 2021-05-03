@@ -11,6 +11,14 @@ In order to do this, the main program, **_AutoZoom.exe_** acceses the **_data.tx
 | Time          | In the 24 hour format; Must contain 4 digits; 2 → hour & 2 → minute.<br>e.g.  →  07:25  |
 | Days          | Days in which the meeting will be joined; Separated by coma.<br>e.g.  →  monday, tuesday|
 
+Of the files included:<br>
+-**AutoZoom.exe** is the main code
+-**Deactive.exe** kills the AutoZoom process and removes it from StartUp
+-There is a text file included with installation instructions
+-data.txt contains the user's meetings' information
+-**MessageBox.vbs** is used to notify the user previous to the Zoom meeting, while allowing the process to keep running
+-All three **.dll** libraries are required for the program's function.
+
 Zoom Links are executing using the following command:
 ```c++
 ShellExecute(nullptr, "open", linksS.c_str(), nullptr, nullptr, 0);
