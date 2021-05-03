@@ -49,7 +49,7 @@ AutoZoom es un programa escrito en C++ que automaticamente entra a tus reuniones
 
 Para hacer esto, el programa principal **_AutoZoom.exe_** se añade a si mismo al StartUp del Usuario Actual y accesa al archivo **_data.txt_**, el cual contiene toda la informacion necesaria para correr el programa, esto incluye:
 
-| Parametro     | Descricion    |
+| Parametro     | Descripcion   |
 | ------------- |:--------------|
 | Zoom Link     | Debe contener **https://** y **zoom** en el                                                   |
 | Hora          | En el formato de 24 horas; Debe contener 4 digitos; 2 → hora & 2 → minuto.<br>ej.  →  07:25   |
