@@ -45,25 +45,25 @@ Each MessageBox() contains a code and description of the error.
 <br>
 
 ## Español
-AutoZoom es un programa escrito en C++ que automaticamente entra a tus reuniones de Zoom ejecutando los Links de Zoom. Este es el link para la [Version en Español](https://github.com/GioByte10/AutoZoom/releases/tag/Spanish)
+AutoZoom es un programa escrito en C++ que automáticamente entra a tus reuniones de Zoom ejecutando los Links de Zoom. Este es el link para la [Versión en Español](https://github.com/GioByte10/AutoZoom/releases/tag/Spanish)
 
-Para hacer esto, el programa principal **_AutoZoom.exe_** se añade a si mismo al StartUp del Usuario Actual y accesa al archivo **_data.txt_**, el cual contiene toda la informacion necesaria para correr el programa, esto incluye:
+Para hacer esto, el programa principal **_AutoZoom.exe_** se añade a si mismo al StartUp del Usuario Actual y accesa al archivo **_data.txt_**, el cual contiene toda la información necesaria para correr el programa, esto incluye:
 
-| Parametro     | Descripcion   |
+| Parámetro     | Descripción   |
 | ------------- |:--------------|
 | Zoom Link     | Debe contener **https://** y **zoom** en el                                                |
-| Hora          | En el formato de 24 horas; Debe contener 4 digitos; 2 → hora & 2 → minuto.<br>ej.  →  07:25|
-| Dia           | Dias en los cuales se unira a la reunion; Separados por coma<br>ej.  →  lunes, martes      |
+| Hora          | En el formato de 24 horas; Debe contener 4 dígitos; 2 → hora & 2 → minuto.<br>ej.  →  07:25|
+| Día	          | Días en los cuales se unirá a la reunión; Separados por coma<br>ej.  →  lunes, martes      |
 
-El usario tambien puede ser notificado **X** minutos antes con una vetana de dialogo si es solicitado en el archivo **data.txt**.
+El usuario también puede ser notificado **X** minutos antes con una ventana de diálogo si es solicitado en el archivo **data.txt**.
 
 De los archivos incluidos:
 * **AutoZoom.exe** es el programa principal.
 * **Deactive.exe** destruye el proceso de AutoZoom y lo remueve del StartUp
-* Hay un archivo que incluye las instrucciones de instalacion
-* **data.txt** contiene la informacion de las reuniones del usuario
-* **MessageBox.vbs** es usado para notificar al usuario previo a la reunion (si asi lo solicita el usuario), permitiendo que el proceso siga corriendo
-* Todas las tres librerias **.dll** son requeridas para el funcionamiento del programa
+* Hay un archivo que incluye las instrucciones de instalación
+* **data.txt** contiene la información de las reuniones del usuario
+* **MessageBox.vbs** es usado para notificar al usuario previo a la reunión (si así lo solicita el usuario), permitiendo que el proceso siga corriendo
+* Todas las tres librarías **.dll** son requeridas para el funcionamiento del programa
 
 Los Links de Zoom son ejecutados utilizando el siguiente comando:
 ```c++
@@ -75,8 +75,8 @@ donde:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;linksS es una variable del tipo **string** conteniendo un solo Link.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;_c_str()_ es incluido, ya que una variable de tipo **LPCSTR** es requerida.<br>
 
-Notese que los Links seran ejecutados en el navegador por defecto del usuario.
+Nótese que los Links serán ejecutados en el navegador por defecto del usuario.
 
-El programa tambien incluye 10 differentes [MessageBox()](https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-messagebox) de error, los cuales, si no son cerrados, el proceso no puede continuar.
+El programa también incluye 10 differentes [MessageBox()](https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-messagebox) de error, los cuales, si no son cerrados, el proceso no puede continuar.
 
-Cada MessageBox() contiene un codigo y descripcion del error.
+Cada MessageBox() contiene un código y descripción del error.
