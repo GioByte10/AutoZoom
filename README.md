@@ -11,9 +11,9 @@ ShellExecute(nullptr, "open", linksS.c_str(), nullptr, nullptr, 0);
 ```
 where:
 
-    linksS is a variable of **string** type holding a single link.
+&nbsp;&nbsp;&nbsp;&nbsp;linksS is a variable of **string** type holding a single link.
   
-    _c_str()_ is added, as a **LPCSTR** variable is needed.
+&nbsp;&nbsp;&nbsp;&nbsp;_c_str()_ is added, as a **LPCSTR** variable is needed.
 
 
 thus, links will be open in the user's default browser
