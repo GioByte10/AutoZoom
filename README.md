@@ -66,7 +66,7 @@ De los archivos incluidos:
 * **Deactive.exe** destruye el proceso de AutoZoom y lo remueve del StartUp
 * Hay un archivo que incluye las instrucciones de instalación
 * **data.txt** contiene la información de las reuniones del usuario
-* **MessageBox.vbs** es usado para notificar al usuario previo a la reunión (si así lo solicita el usuario), permitiendo que el proceso siga corriendo
+* **MessageBox.vbs** es usado para notificar al usuario previo a la reunión (si así lo solicita el usuario), y permite que el proceso siga corriendo
 * Todas las tres librarías **.dll** son requeridas para el funcionamiento del programa
 
 Los Links de Zoom son ejecutados utilizando el siguiente comando:
