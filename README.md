@@ -14,7 +14,7 @@ In order to do this, the main program, [**_AutoZoom.exe_**](https://github.com/G
 
 AutoZoom then continuously checks if the current time and day are equal to that of any Zoom Link, and if so, it executes the respective Link.
 
-The user can also be notified **X** minutes before with a dialog box if requested in the **data.txt** file.
+The user can also be notified **X** minutes before the meeting with a dialog box if requested in the **data.txt** file.
 
 Of the files included:
 * **AutoZoom.exe** is the main code
@@ -59,7 +59,7 @@ Para hacer esto, el programa principal [**_AutoZoom.exe_**](https://github.com/G
 
 AutoZoom entonces checa continuamente si la hora y dia actual son iguales a los de cualquier Link de Zoom, y en dado caso, ejecuta el respectivo link.
 
-El usuario también puede ser notificado **X** minutos antes con una ventana de diálogo si es solicitado en el archivo **data.txt**.
+El usuario también puede ser notificado **X** minutos antes de la reunion con una ventana de diálogo si es solicitado en el archivo **data.txt**.
 
 De los archivos incluidos:
 * **AutoZoom.exe** es el programa principal.
