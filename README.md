@@ -45,7 +45,7 @@ Each MessageBox() contains a code and description of the error.
 <br>
 
 ## Español
-AutoZoom es un programa escrito en C++ que automaticamente entra a tus reuniones de Zoom al ejecutar los Links de Zoom. Este es el link para la [Version en Español](https://github.com/GioByte10/AutoZoom/releases/tag/English)
+AutoZoom es un programa escrito en C++ que automaticamente entra a tus reuniones de Zoom ejecutando los Links de Zoom. Este es el link para la [Version en Español](https://github.com/GioByte10/AutoZoom/releases/tag/English)
 
 Para hacer esto, el programa principal **_AutoZoom.exe_** se añade a si mismo al StartUp del Usuario Actual y accesa al archivo **_data.txt_**, el cual contiene toda la informacion necesaria para correr el programa, esto incluye:
 
