@@ -20,7 +20,7 @@ Of the files included:
 * There is a text file included with installation instructions
 * **data.txt** contains the user's meetings' information
 * **MessageBox.vbs** is used to notify the user previous to the Zoom meeting (if chosen by the user), while allowing the process to keep running
-* All three **.dll** libraries are required for the program's function.
+* All three **.dll** libraries are required for the program to function.
 
 Zoom Links are executed using the following command:
 ```c++
