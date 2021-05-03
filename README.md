@@ -5,6 +5,12 @@ AutoZoom is a C++ written program that automatically joins your Zoom meetings by
 
 In order to do this, the main program, **_AutoZoom.exe_** acceses the **_data.txt_** file which contains all information necessary for it to run, this includes:
 
+| Parameter     | Description   |
+| ------------- |:-------------:|
+| Zoom Link     | Must contain the words "https://" and "zoom" in it                   |
+| Time          | In the 24 hour format. Must contain 4 digits; 2 -> hour & 2 -> minute|
+| zebra stripes | are neat                                                             |
+
 Zoom Links are executing using the following command:
 ```c++
 ShellExecute(nullptr, "open", linksS.c_str(), nullptr, nullptr, 0);
