@@ -8,9 +8,9 @@ In order to do this, the main program, **_AutoZoom.exe_** adds itself to the Cur
 
 | Parameter     | Description   |
 | ------------- |:--------------|
-| Zoom Link     | Must contain **https://** and **zoom** in it.                                           |
+| Zoom Link     | Must contain **https://** and **zoom** in it                                            |
 | Time          | In the 24 hour format; Must contain 4 digits; 2 → hour & 2 → minute.<br>e.g.  →  07:25  |
-| Days          | Days in which the meeting will be joined; Separated by coma.<br>e.g.  →  monday, tuesday|
+| Days          | Days in which the meeting will be joined; Separated by coma<br>e.g.  →  monday, tuesday |
 
 The user can also be notified **X** minutes before with a dialog box if requested in the **data.txt** file.
 
@@ -51,9 +51,9 @@ Para hacer esto, el programa principal **_AutoZoom.exe_** se añade a si mismo a
 
 | Parametro     | Descripcion   |
 | ------------- |:--------------|
-| Zoom Link     | Debe contener **https://** y **zoom** en el.                                                  |
-| Hora          | En el formato de 24 horas; Debe contener 4 digitos; 2 → hora & 2 → minuto.<br>ej.  →  07:25   |
-| Dia           | Dias en los cuales se unira a la reunion; Separados por coma.<br>ej.  →  lunes, martes        |
+| Zoom Link     | Debe contener **https://** y **zoom** en el                                                |
+| Hora          | En el formato de 24 horas; Debe contener 4 digitos; 2 → hora & 2 → minuto.<br>ej.  →  07:25|
+| Dia           | Dias en los cuales se unira a la reunion; Separados por coma<br>ej.  →  lunes, martes      |
 
 El usario tambien puede ser notificado **X** minutos antes con una vetana de dialogo si es solicitado en el archivo **data.txt**.
 
