@@ -26,6 +26,8 @@ Zoom Links are executed using the following command:
 ```c++
 ShellExecute(nullptr, "open", linksS.c_str(), nullptr, nullptr, 0);
 ```
+[ShellExecute Documentation](https://docs.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shellexecutea)
+
 where:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;linksS is a variable of **string** type holding a single link.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;_c_str()_ is added, as a **LPCSTR** variable is needed.<br>
@@ -66,6 +68,8 @@ Los Links de Zoom son ejecutados usando el siguiente comando:
 ```c++
 ShellExecute(nullptr, "open", linksS.c_str(), nullptr, nullptr, 0);
 ```
+[ShellExecute Documentation](https://docs.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shellexecutea)
+
 donde:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;linksS es una variable del tipo **string** conteniendo un solo Link.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;_c_str()_ es incluido, ya que una variable de tipo **LPCSTR** es requerida.<br>
