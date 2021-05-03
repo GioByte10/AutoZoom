@@ -57,7 +57,7 @@ Para hacer esto, el programa principal [**_AutoZoom.exe_**](https://github.com/G
 | Hora          | En el formato de 24 horas; Debe contener 4 dígitos; 2 → hora & 2 → minuto.<br>ej.  →  07:25|
 | Día	          | Días en los cuales se unirá a la reunión; Separados por coma<br>ej.  →  lunes, martes      |
 
-AutoZoom entonces checa continuamente si la hora y dia actual son iguales a los de cualquier Link de Zoom, y en dado caso, ejecuta el respectivo link.
+AutoZoom entonces checa continuamente si la hora y día actual son iguales a los de cualquier Link de Zoom, y en dado caso, ejecuta el respectivo link.
 
 El usuario también puede ser notificado **X** minutos antes de la reunion con una ventana de diálogo si es solicitado en el archivo **data.txt**.
 
