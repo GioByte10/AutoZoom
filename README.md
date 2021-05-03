@@ -11,11 +11,13 @@ In order to do this, the main program, **_AutoZoom.exe_** adds itself to StartUp
 | Time          | In the 24 hour format; Must contain 4 digits; 2 → hour & 2 → minute.<br>e.g.  →  07:25  |
 | Days          | Days in which the meeting will be joined; Separated by coma.<br>e.g.  →  monday, tuesday|
 
+The user can also be notified **X** minutes before with a dialog box if requested by the user in the **data.txt** file.
+
 Of the files included:
 * **AutoZoom.exe** is the main code
 * **Deactive.exe** kills the AutoZoom process and removes it from StartUp
 * There is a text file included with installation instructions
-* data.txt contains the user's meetings' information
+* **data.txt** contains the user's meetings' information
 * **MessageBox.vbs** is used to notify the user previous to the Zoom meeting (if chosen by the user), while allowing the process to keep running
 * All three **.dll** libraries are required for the program's function.
 
