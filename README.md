@@ -12,6 +12,8 @@ In order to do this, the main program, [**_AutoZoom.exe_**](https://github.com/G
 | Time          | In the 24 hour format; Must contain 4 digits; 2 → hour & 2 → minute.<br>e.g.  →  07:25  |
 | Days          | Days in which the meeting will be joined; Separated by coma<br>e.g.  →  monday, tuesday |
 
+AutoZoom then continuosly checks if the current time and day are equal to that of any Zoom Link, and if so, it executes that respective Link.
+
 The user can also be notified **X** minutes before with a dialog box if requested in the **data.txt** file.
 
 Of the files included:
@@ -47,13 +49,15 @@ Each MessageBox() contains a code and description of the error.
 ## Español
 AutoZoom es un programa escrito en C++ que automáticamente entra a tus reuniones de Zoom ejecutando los Links de Zoom. Este es el link para la [Versión en Español](https://github.com/GioByte10/AutoZoom/releases/tag/Spanish)
 
-Para hacer esto, el programa principal **_AutoZoom.exe_** se añade a si mismo al StartUp del Usuario Actual y accesa al archivo **_data.txt_**, el cual contiene toda la información necesaria para correr el programa, esto incluye:
+Para hacer esto, el programa principal [**_AutoZoom.exe_**](https://github.com/GioByte10/AutoZoom/blob/main/AutoZoom.cpp) se añade a si mismo al StartUp del Usuario Actual y accesa al archivo [**_data.txt_**](https://github.com/GioByte10/AutoZoom/blob/main/data.txt), el cual contiene toda la información necesaria para correr el programa, esto incluye:
 
 | Parámetro     | Descripción   |
 | ------------- |:--------------|
 | Zoom Link     | Debe contener **https://** y **zoom** en el                                                |
 | Hora          | En el formato de 24 horas; Debe contener 4 dígitos; 2 → hora & 2 → minuto.<br>ej.  →  07:25|
 | Día	          | Días en los cuales se unirá a la reunión; Separados por coma<br>ej.  →  lunes, martes      |
+
+AutoZoom entonces checa continuamente si la hora y dia actual son iguales a los de cualquier Link de Zoom, y en dado caso, ejecuta el respectivo link.
 
 El usuario también puede ser notificado **X** minutos antes con una ventana de diálogo si es solicitado en el archivo **data.txt**.
 
