@@ -16,10 +16,10 @@ Of the files included:
 * **Deactive.exe** kills the AutoZoom process and removes it from StartUp
 * There is a text file included with installation instructions
 * data.txt contains the user's meetings' information
-* **MessageBox.vbs** is used to notify the user previous to the Zoom meeting, while allowing the process to keep running
+* **MessageBox.vbs** is used to notify the user previous to the Zoom meeting (if chosen by the user), while allowing the process to keep running
 * All three **.dll** libraries are required for the program's function.
 
-Zoom Links are executing using the following command:
+Zoom Links are executed using the following command:
 ```c++
 ShellExecute(nullptr, "open", linksS.c_str(), nullptr, nullptr, 0);
 ```
@@ -27,5 +27,4 @@ where:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;linksS is a variable of **string** type holding a single link.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;_c_str()_ is added, as a **LPCSTR** variable is needed.<br>
 
-
-* thus, links will be open in the user's default browser
+Note that links will be open in the user's default browser
