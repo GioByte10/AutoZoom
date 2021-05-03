@@ -12,12 +12,12 @@ In order to do this, the main program, **_AutoZoom.exe_** acceses the **_data.tx
 | Days          | Days in which the meeting will be joined; Separated by coma.<br>e.g.  →  monday, tuesday|
 
 Of the files included:<br>
--**AutoZoom.exe** is the main code
--**Deactive.exe** kills the AutoZoom process and removes it from StartUp
--There is a text file included with installation instructions
--data.txt contains the user's meetings' information
--**MessageBox.vbs** is used to notify the user previous to the Zoom meeting, while allowing the process to keep running
--All three **.dll** libraries are required for the program's function.
+&nbsp;&nbsp;&nbsp;&nbsp;-**AutoZoom.exe** is the main code
+&nbsp;&nbsp;&nbsp;&nbsp;-**Deactive.exe** kills the AutoZoom process and removes it from StartUp
+&nbsp;&nbsp;&nbsp;&nbsp;-There is a text file included with installation instructions
+&nbsp;&nbsp;&nbsp;&nbsp;-data.txt contains the user's meetings' information
+&nbsp;&nbsp;&nbsp;&nbsp;-**MessageBox.vbs** is used to notify the user previous to the Zoom meeting, while allowing the process to keep running
+&nbsp;&nbsp;&nbsp;&nbsp;-All three **.dll** libraries are required for the program's function.
 
 Zoom Links are executing using the following command:
 ```c++
