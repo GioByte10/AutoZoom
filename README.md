@@ -1,7 +1,8 @@
 # AutoZoom
 ***Español*** [***abajo***](#español)
 
-If you would like to share any feedback or report a problem, please fill this [english form](https://forms.gle/L7LCvQ3MgRciuaqk8)<br>
+If you would like to share any feedback or report a problem, please fill this [english form](https://forms.gle/L7LCvQ3MgRciuaqk8)
+
 Si quisieras compartir retroalimentación o reportar algún problema, por favor llena esta [forma](https://forms.gle/n6eLG34afu7hrVXZ6) en español
 
 ## English
