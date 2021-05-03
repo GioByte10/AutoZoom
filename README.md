@@ -7,9 +7,9 @@ In order to do this, the main program, **_AutoZoom.exe_** acceses the **_data.tx
 
 | Parameter     | Description   |
 | ------------- |:--------------|
-| Zoom Link     | Must contain the words "https://" and "zoom" in it                                     |
-| Time          | In the 24 hour format.<br>Must contain 4 digits; 2 -> hour & 2 -> minute.<br>e.g. 07:25|
-| Days          | Days in which the meeting will be joined.<br>Separated by coma<br>e.g. monday, tuesday |
+| Zoom Link     | Must contain the words "https://" and "zoom" in it                                    |
+| Time          | In the 24 hour format.<br>Must contain 4 digits; 2 → hour & 2 → minute.<br>e.g. 07:25 |
+| Days          | Days in which the meeting will be joined.<br>Separated by coma<br>e.g. monday, tuesday|
 
 Zoom Links are executing using the following command:
 ```c++
