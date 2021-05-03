@@ -633,20 +633,17 @@ bool IsToday(int i, time_t now, tm *ltm){
 }
 
 
-bool CheckIfMessage(int i, int hour, int minute, time_t now, tm *ltm){
+bool CheckIfMessage(int i, int hour, int minute, time_t now, tm *ltm, string path){
 
   int epochF = 0;
   int epochN = 0;
-  string m = "";
 
   if(IsToday(i, now, ltm)){
     epochF = hour * 60 + minute;
     epochN = GetTime("hour", now, ltm) * 60 + GetTime("min", now, ltm);
 
-    m += notification1 + to_string(epochF - epochN) + notification2;
-
     if(epochF - epochN <= minutesBefore && epochF - epochN > 0){
-      MessageBox(NULL, m.c_str(), notificationT, MB_ICONASTERISK);
+      ShellExecute(NULL, "open", path.c_str(), NULL, NULL, SW_SHOWDEFAULT);
       return true;
     }
   }
@@ -670,6 +667,8 @@ int main(){
 
   while(true){
 
+      string vbsPath = "";
+
       TCHAR* filePath = GetFilePath();
       dataTxt = "";
 
@@ -680,6 +679,8 @@ int main(){
           dataTxt += '\\';
       }
 
+      vbsPath = dataTxt;
+      vbsPath += "MessageBox.vbs";
       dataTxt += "data.txt";
 
       ResetLists();
@@ -740,7 +741,7 @@ int main(){
             //cout << linksS << "  " << hour << "   " << minute << endl;
 
             if(message && !once)
-                once = CheckIfMessage(i, hour, minute, now, ltm);
+                once = CheckIfMessage(i, hour, minute, now, ltm, vbsPath);
 
             if(hour == GetTime("hour", now, ltm) && minute == GetTime("min", now, ltm) && IsToday(i, now, ltm)){
                 ShellExecute(nullptr, "open", linksS.c_str(), nullptr, nullptr, 0);

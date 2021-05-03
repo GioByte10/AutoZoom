@@ -1,14 +1,14 @@
 C:\Users\super\Desktop\Giovanni\Programacion\Lenguajes\AutoZoom\AutoZoom.exe
-*spanish
+*english
 *
-*Reportar cualquier problema/bug/sugerencia/etc a gvanni.bernal10@gmail.com
+*Please report any problem/bug/suggestion/etc to gvanni.bernal10@gmail.com
 *
-*No modificar ninguna linea que contenga asterisco (*), ni la primera linea
-*Favor de maximizar la ventana para ver todas las columnas
-*Asegurarse de que el link de zoom contega https://
+*Do not modify any line that has asterisk (*), nor the first line
+*Please maximize the window to see all columns
+*Make sure the link contains https://
 *
 *
-Quisieras ser notificado antes de entrar a la sesion?: no
-En caso de que si, cuantos minutos antes?: 5
+Would you like to be notified before joining the meeting?: no
+In case yes, how many minutes before?: 5
 *
-*zoom link			 									hora (formato 24 horas)			dia (e.g lunes, martes...)
+*zoom link			 									time (24 hour format)			day (e.g monday, tuesday...)
