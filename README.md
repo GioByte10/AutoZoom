@@ -44,6 +44,9 @@ The program also features 10 different error [MessageBox()](https://docs.microso
 
 Each MessageBox() contains a code and description of the error.
 
+***DO NOT MODIFY ANY OF THE LINES MARKED WITH AN*** "*" ***IN THE DATA.TXT***<br>
+***DO NOT DELETE ANY OF THE FILES INCLUDED IN THE AUTOZOOM FOLDER***
+
 <br>
 
 ---
@@ -88,3 +91,6 @@ Nótese que los Links serán ejecutados en el navegador por defecto del usuario.
 El programa también incluye 10 diferentes [MessageBox()](https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-messagebox) de error, los cuales, si no son cerrados, el proceso no puede continuar.
 
 Cada MessageBox() contiene un código y descripción del error.
+
+***NO MODIFIQUE NINGUNA LINEA MARCADA CON UN*** "*" ***EN EL ARCHIVO DATA.TXT***<br>
+***NO BORRE NINGUN ARCHIVO INCLUIDO EN EL FOLDER DE AUTOZOOM***
