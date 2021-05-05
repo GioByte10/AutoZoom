@@ -1,7 +1,7 @@
 # AutoZoom
 
-Currently for ***Windows Only***
-Actualmente solo para ***Windows**
+Currently for ***Windows Only***<br>
+Actualmente solo para ***Windows***
 
 ***Español*** [***abajo***](#español)
 
