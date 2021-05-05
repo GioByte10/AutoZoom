@@ -1,4 +1,8 @@
 # AutoZoom
+
+Currently for ***Windows Only***
+Actualmente solo para ***Windows**
+
 ***Español*** [***abajo***](#español)
 
 If you would like to share any feedback or report a problem, please fill this [english form](https://forms.gle/L7LCvQ3MgRciuaqk8)
