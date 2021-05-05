@@ -10,7 +10,7 @@ If you would like to share any feedback or report a problem, please fill this [e
 Si quisieras compartir retroalimentación o reportar algún problema, por favor llena esta [forma](https://forms.gle/n6eLG34afu7hrVXZ6) en español
 
 ## English
-AutoZoom is a C++ written program that runs in the background, and automatically joins your Zoom meetings by running the Zoom Links. This is the link for the [English Version](https://github.com/GioByte10/AutoZoom/releases/tag/English)
+AutoZoom is a C++ written program that runs in the background, and automatically joins your Zoom meetings by running the Zoom Links. This is the link for the [English Version](https://github.com/GioByte10/AutoZoom/releases/tag/English), and [here](https://www.youtube.com/watch?v=bGYP7srUeGg) you can find a video on how to install it.
 
 In order to do this, the main program, [**_AutoZoom.exe_**](https://github.com/GioByte10/AutoZoom/blob/main/AutoZoom.cpp) adds itself to the Current User's StartUp and acceses the [**_data.txt_**](https://github.com/GioByte10/AutoZoom/blob/main/data.txt) file which contains all information necessary for it to run, this includes:
 
