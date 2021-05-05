@@ -30,6 +30,7 @@ Of the files included:
 * There is a text file included with installation instructions
 * **data.txt** contains the user's meetings' information
 * **MessageBox.vbs** is used to notify the user previous to the Zoom meeting (if chosen by the user), while allowing the process to keep running
+* **MessageBoxStart.vbs** notifies the user, every time the computer starts, that AutoZoom is running 
 * All three **.dll** libraries are required for the program to function.
 
 Zoom Links are executed using the following command:
@@ -78,6 +79,7 @@ De los archivos incluidos:
 * Hay un archivo que incluye las instrucciones de instalación
 * **data.txt** contiene la información de las reuniones del usuario
 * **MessageBox.vbs** es usado para notificar al usuario previo a la reunión (si así lo solicita el usuario), y permite que el proceso siga corriendo
+* **MessageBoxStart.vbs** notifica al usuario, cada vez que se enciende la computadora, que AutoZoom esta corriendo
 * Todas las tres librarías **.dll** son requeridas para el funcionamiento del programa
 
 Los Links de Zoom son ejecutados utilizando el siguiente comando:
