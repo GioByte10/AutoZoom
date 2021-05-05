@@ -284,7 +284,8 @@ void ResetTxt(int* lastWritten){
       newFile << GetFilePath() << endl;
       newFile << "*spanish" << endl;
       newFile << "*" << endl;
-      newFile << "*Reportar cualquier problema/bug/sugerencia/etc a gvanni.bernal10@gmail.com" << endl;
+      newFile << "*Reportar cualquier problema/bug/sugerencia/etc a gvanni.bernal10@gmail.com o llene este formulario: https://forms.gle/n6eLG34afu7hrVXZ6" << endl;
+      newFile << "*Cualquier donacion es inmensamente apreciada :) https://www.paypal.com/paypalme/GioByte10" << endl;
       newFile << "*" << endl;
       newFile << "*No modificar ninguna linea que contenga asterisco (*), ni la primera linea" << endl;
       newFile << "*Favor de maximizar la ventana para ver todas las columnas" << endl;
@@ -302,7 +303,8 @@ void ResetTxt(int* lastWritten){
       newFile << GetFilePath() << endl;
       newFile << "*english" << endl;
       newFile << "*" << endl;
-      newFile << "*Please report any problem/bug/suggestion/etc to gvanni.bernal10@gmail.com" << endl;
+      newFile << "*Please report any problem/bug/suggestion/etc to gvanni.bernal10@gmail.com or fill out this form: https://forms.gle/L7LCvQ3MgRciuaqk8" << endl;
+      newFile << "*Donations are greatly appreciated :) https://www.paypal.com/paypalme/GioByte10" << endl;
       newFile << "*" << endl;
       newFile << "*Do not modify any line that has asterisk (*), nor the first line" << endl;
       newFile << "*Please maximize the window to see all columns" << endl;
@@ -664,6 +666,21 @@ void ResetLists(){
 int main(){
 
   ShowWindow(GetConsoleWindow(), SW_HIDE);
+
+  string vbsPathStart = "";
+
+  TCHAR* filePath = GetFilePath();
+
+  for(int i = 0; i < lstrlen(filePath) - 12; i++){
+    vbsPathStart += filePath[i];
+
+    if(filePath[i] == '\\')
+      vbsPathStart += '\\';
+  }
+
+  vbsPathStart += "MessageBoxStart.vbs";
+
+  ShellExecute(NULL, "open", vbsPathStart.c_str(), NULL, NULL, SW_SHOWDEFAULT);
 
   while(true){
 
