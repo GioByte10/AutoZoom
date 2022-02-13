@@ -1,14 +1,11 @@
 #include <windows.h>
 #include <bits/stdc++.h>
 #include <iostream>
-#include <sstream>
-#include <stdio.h>
 #include <list>
 #include <ctime>
 using namespace std;
 
-string fileFound, aError, zoomLinks, headers, dataTxt;
-LPCSTR notification1, notification2, notificationT;
+string fileFound, aError, zoomLinks, headers, dataTxt, late;
 bool spanish = false;
 bool error = false;
 
@@ -19,31 +16,31 @@ list <string> days_list;
 int minutesBefore = 5;
 
 
-TCHAR* GetFilePath(){
+TCHAR* getFilePath(){
 
   static TCHAR filePath[MAX_PATH];
-  GetModuleFileName(NULL, filePath, MAX_PATH);
+  GetModuleFileName(nullptr, filePath, MAX_PATH);
 
   return filePath;
 
 }
 
 
-void AddToStartUp(){
+void addToStartUp(){
 
   TCHAR filePath[MAX_PATH];
-  GetModuleFileName(NULL, filePath, MAX_PATH);
+  GetModuleFileName(nullptr, filePath, MAX_PATH);
 
   HKEY newKey;
 
-  RegOpenKey(HKEY_CURRENT_USER, "Software\\Microsoft\\Windows\\CurrentVersion\\Run", &newKey);
+  RegOpenKey(HKEY_CURRENT_USER, R"(Software\Microsoft\Windows\CurrentVersion\Run)", &newKey);
   RegSetValueEx(newKey, "AutoZoom", 0, REG_SZ, (LPBYTE)filePath, sizeof(filePath));
   RegCloseKey(newKey);
 
 }
 
 
-string GetTxtPath(){
+string getTxtPath(){
 
   ifstream inputData;
   string txtPath;
@@ -51,7 +48,7 @@ string GetTxtPath(){
   inputData.open(dataTxt);
 
   if(inputData.fail()){
-    MessageBox(NULL, (fileFound + "\n Code: 0x01").c_str(), "AutoZoom Error", MB_ICONHAND);
+    MessageBox(nullptr, (fileFound + "\n Code: 0x01").c_str(), "AutoZoom Error", MB_ICONHAND);
     exit(1);
   }
 
@@ -63,13 +60,13 @@ string GetTxtPath(){
 }
 
 
-void UpdateTxt(){
+void updateTxt(){
 
   ifstream getData;
   getData.open(dataTxt);
 
   if(getData.fail()){
-    MessageBox(NULL, (fileFound + "\n Code: 0x02").c_str(), "AutoZoom Error", MB_ICONHAND);
+    MessageBox(nullptr, (fileFound + "\n Code: 0x02").c_str(), "AutoZoom Error", MB_ICONHAND);
     exit(1);
   }
 
@@ -94,7 +91,7 @@ void UpdateTxt(){
       ofstream writeData;
       writeData.open(dataTxt);
 
-      lines[0] = GetFilePath();
+      lines[0] = getFilePath();
 
       for(int j = 0; j < i - 1; j++)
         writeData << lines[j] << endl;
@@ -108,7 +105,7 @@ void UpdateTxt(){
     ofstream writeData;
     writeData.open(dataTxt);
 
-    writeData << GetFilePath();
+    writeData << getFilePath();
 
     writeData.close();
 
@@ -116,14 +113,14 @@ void UpdateTxt(){
 }
 
 
-bool GetLastWritten(int *lastWritten){
+bool getLastWritten(int *lastWritten){
 
   HANDLE file;
   FILETIME tWritten;
   SYSTEMTIME stUTC, stLocal;
 
-  TCHAR* filePath = GetFilePath();
-  string txtPath = "";
+  TCHAR* filePath = getFilePath();
+  string txtPath;
 
   for(int i = 0; i < lstrlen(filePath) - 12; i++){
     txtPath += filePath[i];
@@ -134,41 +131,26 @@ bool GetLastWritten(int *lastWritten){
 
   txtPath += "data.txt";
 
-  file = CreateFile(txtPath.c_str(), GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+  file = CreateFile(txtPath.c_str(), GENERIC_READ, FILE_SHARE_READ, nullptr, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
 
   if(file == INVALID_HANDLE_VALUE){
-    MessageBox(NULL, (aError + "\n Code: 0x03").c_str(), "AutoZoom Error", MB_ICONHAND);
+    MessageBox(nullptr, (aError + "\n Code: 0x03").c_str(), "AutoZoom Error", MB_ICONHAND);
     exit(1);
   }
 
-  if(!GetFileTime(file, NULL, NULL, &tWritten)){
-    MessageBox(NULL, (aError + "\n Code: 0x04").c_str(), "AutoZoom Error", MB_ICONHAND);
+  if(!GetFileTime(file, nullptr, nullptr, &tWritten)){
+    MessageBox(nullptr, (aError + "\n Code: 0x04").c_str(), "AutoZoom Error", MB_ICONHAND);
     exit(1);
   }
 
   FileTimeToSystemTime(&tWritten, &stUTC);
-  SystemTimeToTzSpecificLocalTime(NULL, &stUTC, &stLocal);
+  SystemTimeToTzSpecificLocalTime(nullptr, &stUTC, &stLocal);
 
   //printf("Last Written on %02d/%02d/%d  %02d:%02d\n", stLocal.wMonth, stLocal.wDay, stLocal.wYear, stLocal.wHour, stLocal.wMinute);
 
   bool changed = false;
 
-  if(lastWritten[5] != stLocal.wSecond)
-    changed = true;
-
-  else if(lastWritten[4] != stLocal.wMinute)
-    changed = true;
-
-  else if(lastWritten[3] != stLocal.wHour)
-    changed = true;
-
-  else if(lastWritten[2] != stLocal.wDay)
-    changed = true;
-
-  else if(lastWritten[1] != stLocal.wMonth)
-    changed = true;
-
-  else if(lastWritten[0] != stLocal.wYear)
+  if(lastWritten[5] != stLocal.wSecond || lastWritten[4] != stLocal.wMinute || lastWritten[3] != stLocal.wHour || lastWritten[2] != stLocal.wDay || lastWritten[1] != stLocal.wMonth || lastWritten[0] != stLocal.wYear)
     changed = true;
 
   lastWritten[0] = stLocal.wYear;
@@ -185,13 +167,13 @@ bool GetLastWritten(int *lastWritten){
 }
 
 
-bool CheckTxt(){
+bool checkTxt(){
 
   ifstream getData;
   getData.open(dataTxt);
 
   if(getData.fail()){
-    MessageBox(NULL, (fileFound + "\n Code: 0x05").c_str(), "AutoZoom Error", MB_ICONHAND);
+    MessageBox(nullptr, (fileFound + "\n Code: 0x05").c_str(), "AutoZoom Error", MB_ICONHAND);
     exit(1);
   }
 
@@ -212,12 +194,12 @@ bool CheckTxt(){
 }
 
 
-void GetHours(int *times, string word){
+void getHours(int *times, string word){
 
-  string h = "";
-  string m = "";
+  string h;
+  string m;
 
-  int i = 0;
+  int i;
 
   for(i = 0; i < word.length(); i++)
     if(word[i] != ':')
@@ -237,10 +219,9 @@ void GetHours(int *times, string word){
 }
 
 
-string GetDays(string daysL, string word){
+string getDays(string daysL, string word){
 
-  for(int i = 0; i < word.length(); i++)
-    word[i] = tolower(word[i]);
+  transform(word.begin(), word.end(), word.begin(), ::tolower);
 
   if(word.find("lunes") != string::npos || word.find("monday") != string::npos)
     daysL += "monday ";
@@ -268,9 +249,9 @@ string GetDays(string daysL, string word){
 }
 
 
-void ResetTxt(int* lastWritten){
+void resetTxt(int* lastWritten){
 
-  int msbID = MessageBox(NULL, (headers + "\n Code: 0x06").c_str(), "AutoZoom Error", MB_ICONEXCLAMATION | MB_YESNO);
+  int msbID = MessageBox(nullptr, (headers + "\n Code: 0x06").c_str(), "AutoZoom Error", MB_ICONEXCLAMATION | MB_YESNO);
 
   if(msbID == IDYES){
     ofstream newFile;
@@ -281,7 +262,7 @@ void ResetTxt(int* lastWritten){
 
     if(spanish){
 
-      newFile << GetFilePath() << endl;
+      newFile << getFilePath() << endl;
       newFile << "*spanish" << endl;
       newFile << "*" << endl;
       newFile << "*Reportar cualquier problema/bug/sugerencia/etc a gvanni.bernal10@gmail.com o llene este formulario: https://forms.gle/n6eLG34afu7hrVXZ6" << endl;
@@ -300,7 +281,7 @@ void ResetTxt(int* lastWritten){
 
     }else{
 
-      newFile << GetFilePath() << endl;
+      newFile << getFilePath() << endl;
       newFile << "*english" << endl;
       newFile << "*" << endl;
       newFile << "*Please report any problem/bug/suggestion/etc to gvanni.bernal10@gmail.com or fill out this form: https://forms.gle/L7LCvQ3MgRciuaqk8" << endl;
@@ -322,15 +303,14 @@ void ResetTxt(int* lastWritten){
      }else{
       error = true;
 
-      while(!GetLastWritten(lastWritten)){
-        //cout <<"waiting" << endl;
+      while(!getLastWritten(lastWritten)){
         Sleep(3000);
       }
    }
 }
 
 
-bool GetInfo(int* lastWritten){
+bool getInfo(int* lastWritten){
 
   bool message = false;
 
@@ -338,7 +318,7 @@ bool GetInfo(int* lastWritten){
   getData.open(dataTxt);
 
   if(getData.fail()){
-    MessageBox(NULL, (fileFound + "\n Code: 0x07").c_str(), "AutoZoom Error", MB_ICONHAND);
+    MessageBox(nullptr, (fileFound + "\n Code: 0x07").c_str(), "AutoZoom Error", MB_ICONHAND);
     exit(1);
   }
 
@@ -362,8 +342,7 @@ bool GetInfo(int* lastWritten){
     for(int i = 0; i < nLines; i++)
         if(lines[i].find("notificado") != string::npos || lines[i].find("notified") != string::npos){
 
-                for(int j = 0; j < lines[i].length(); j++)
-                    lines[i][j] = tolower(lines[i][j]);
+            transform(lines[i].begin(), lines[i].end(), lines[i].begin(), ::tolower);
 
             if(lines[i].substr(lines[i].length() - 3, 3).find("si") != string::npos || lines[i].substr(lines[i].length() - 3, 3).find("yes") != string::npos){
               message = true;
@@ -393,7 +372,7 @@ bool GetInfo(int* lastWritten){
             break;
         }
 
-    if(firstL != -1 && CheckTxt()){
+    if(firstL != -1 && checkTxt()){
 
       int nLinks = 0;
 
@@ -434,7 +413,7 @@ bool GetInfo(int* lastWritten){
       j = 0;
 
       int times[2];
-      string daysL = "";
+      string daysL;
 
       for(int i = 0; i < nLinks; i++){
 
@@ -448,12 +427,12 @@ bool GetInfo(int* lastWritten){
               zoomLinks_list.push_back(word);
 
             }else if(j == 1){
-              GetHours(times, word);
+              getHours(times, word);
               hour_list.push_back(times[0]);
               minute_list.push_back(times[1]);
 
             }else{
-              daysL = GetDays(daysL, word);
+              daysL = getDays(daysL, word);
             }
             j++;
           }
@@ -467,11 +446,10 @@ bool GetInfo(int* lastWritten){
       }
 
       }else{
-        MessageBox(NULL, (zoomLinks + "\n Code: 0x08").c_str(), "AutoZoom Error", MB_ICONEXCLAMATION);
+        MessageBox(nullptr, (zoomLinks + "\n Code: 0x08").c_str(), "AutoZoom Error", MB_ICONEXCLAMATION);
         error = true;
 
-        while(!GetLastWritten(lastWritten)){
-          //cout <<"waiting" << endl;
+        while(!getLastWritten(lastWritten)){
           Sleep(3000);
         }
 
@@ -479,7 +457,7 @@ bool GetInfo(int* lastWritten){
 
     }else{
 
-      ResetTxt(lastWritten);
+        resetTxt(lastWritten);
 
     }
   }
@@ -487,9 +465,9 @@ bool GetInfo(int* lastWritten){
 }
 
 
-void ShowLists(){
+__attribute__((unused)) void showLists(){
 
-  for(auto l: zoomLinks_list)
+  for(const auto& l: zoomLinks_list)
     cout << l.c_str() << endl;
 
   cout << endl << "horas: " << endl;
@@ -504,12 +482,12 @@ void ShowLists(){
 
   cout << endl << "dias: " << endl;
 
-  for(auto d: days_list)
+  for(const auto& d: days_list)
         cout << d << endl;
 }
 
 
-void SetLanguage(){
+void setLanguage(){
 
   ifstream getData;
   getData.open(dataTxt);
@@ -517,7 +495,7 @@ void SetLanguage(){
   spanish = false;
 
   if(getData.fail()){
-    MessageBox(NULL, "Error de inicio\nStartUp Error\n Code: 0x00", "AutoZoom Error", MB_ICONHAND);
+    MessageBox(nullptr, "Error de inicio\nStartUp Error\n Code: 0x00", "AutoZoom Error", MB_ICONHAND);
     exit(1);
   }
 
@@ -545,9 +523,7 @@ void SetLanguage(){
     aError = "Ha ocurrido un error. Intente correr AutoZoom.exe de nuevo";
     zoomLinks = "Asegurese de que haya puesto los links de zoom";
     headers = "Al parecer los encabezados de las columnas han sido modificados. Desea eliminar y crear un nuevo archivo de texto?\nEsto borrara toda la informacion que haya puesto en el archivo!\n\nEn caso de que no, debera de arreglar el problema manualmente";
-    notification1 = "La junta de Zoom comenzara en ";
-    notification2 = " minutos";
-    notificationT = "Notificacion";
+    late = "Al parecer llegas tarde a tu reunion de Zoom, ¿Aun te gustaria unirte?";
 
   }else{
 
@@ -555,15 +531,13 @@ void SetLanguage(){
     aError = "There has been an error. Try running AutoZoom.exe again";
     zoomLinks = "Make sure you have added the zoom links";
     headers = "It seems like the columns' headers have been modified. Do you wish to eliminate and create a new text file?\nThis will delete all the information that you had inputted in the file!\n\nIn case no, you will have to manually fix the problem";
-    notification1 = "The Zoom metting will start in ";
-    notification2 = " minutes";
-    notificationT = "Notification";
+    late = "It seems like you are late to your Zoom meeting, would you still like to join?";
 
   }
 }
 
 
-int GetTime(const string &t, time_t now, tm *ltm){
+int getTime(const string &t, time_t now, tm *ltm){
 
     now = time(nullptr);
     localtime(&now);
@@ -591,9 +565,9 @@ int GetTime(const string &t, time_t now, tm *ltm){
 }
 
 
-string WDayToSDay(int day){
+string wDayToSDay(int day){
 
-  string d = "";
+  string d;
 
   if(day == 1)
     d = "monday";
@@ -621,39 +595,73 @@ string WDayToSDay(int day){
 }
 
 
-bool IsToday(int i, time_t now, tm *ltm){
+bool isToday(int i, time_t now, tm *ltm){
 
     auto days_i = days_list.begin();
     advance(days_i, i);
 
     string daysS = *days_i;
 
-        if(daysS.find(WDayToSDay(GetTime("wday", now, ltm))) != string::npos)
+        if(daysS.find(wDayToSDay(getTime("wday", now, ltm))) != string::npos)
             return true;
 
     return false;
 }
 
 
-bool CheckIfMessage(int i, int hour, int minute, time_t now, tm *ltm, string path){
+bool checkIfMessage(int i, int hour, int minute, time_t now, tm *ltm, const string& path){
 
-  int epochF = 0;
-  int epochN = 0;
+  int startT;
+  int currentT;
 
-  if(IsToday(i, now, ltm)){
-    epochF = hour * 60 + minute;
-    epochN = GetTime("hour", now, ltm) * 60 + GetTime("min", now, ltm);
+  if(isToday(i, now, ltm)){
+    startT = hour * 60 + minute;
+    currentT = getTime("hour", now, ltm) * 60 + getTime("min", now, ltm);
 
-    if(epochF - epochN <= minutesBefore && epochF - epochN > 0){
-      ShellExecute(NULL, "open", path.c_str(), NULL, NULL, SW_SHOWDEFAULT);
+    if(startT - currentT <= minutesBefore && startT - currentT > 0){
+      ShellExecute(nullptr, "open", path.c_str(), nullptr, nullptr, SW_SHOWDEFAULT);
       return true;
     }
   }
     return false;
 }
 
+void executeIfLate(list<string>::const_iterator zoomLinks_i, list<int>::const_iterator hour_i, list<int>::const_iterator minute_i, time_t now, tm *ltm){
 
-void ResetLists(){
+    int currentT, startT;
+    int hour, minute;
+    int waitTime = 20;
+    string  linksS;
+
+    for(int i = 0; i < zoomLinks_list.size(); i++){
+
+        linksS = *zoomLinks_i;
+        hour = *hour_i;
+        minute = *minute_i;
+
+        startT = hour * 60 + minute;
+        currentT = getTime("hour", now, ltm) * 60 + getTime("min", now, ltm);
+
+        if(currentT - startT > 0 && currentT - startT <= waitTime){
+            int msbID = MessageBox(nullptr, late.c_str(), "AutoZoom Error", MB_ICONQUESTION | MB_YESNO);
+
+            if(msbID == IDYES){
+                ShellExecute(nullptr, "open", linksS.c_str(), nullptr, nullptr, 0);
+                Sleep(60000);
+            }
+        }
+
+        advance(zoomLinks_i, 1);
+        advance(hour_i, 1);
+        advance(minute_i, 1);
+    }
+
+    cout << "test";
+
+}
+
+
+void resetLists(){
 
   zoomLinks_list.clear();
   hour_list.clear();
@@ -667,9 +675,10 @@ int main(){
 
   ShowWindow(GetConsoleWindow(), SW_HIDE);
 
-  string vbsPathStart = "";
+  string vbsPathStart;
+  TCHAR* filePath = getFilePath();
 
-  TCHAR* filePath = GetFilePath();
+  bool checkIfLate = true;
 
   for(int i = 0; i < lstrlen(filePath) - 12; i++){
     vbsPathStart += filePath[i];
@@ -680,13 +689,13 @@ int main(){
 
   vbsPathStart += "MessageBoxStart.vbs";
 
-  ShellExecute(NULL, "open", vbsPathStart.c_str(), NULL, NULL, SW_SHOWDEFAULT);
+  ShellExecute(nullptr, "open", vbsPathStart.c_str(), nullptr, nullptr, SW_SHOWDEFAULT);
 
   while(true){
 
-      string vbsPath = "";
+      string vbsPath;
 
-      TCHAR* filePath = GetFilePath();
+      filePath = getFilePath();
       dataTxt = "";
 
       for(int i = 0; i < lstrlen(filePath) - 12; i++){
@@ -700,34 +709,34 @@ int main(){
       vbsPath += "MessageBox.vbs";
       dataTxt += "data.txt";
 
-      ResetLists();
-      SetLanguage();
+      resetLists();
+      setLanguage();
 
-      string txtPath = GetTxtPath();
+      string txtPath = getTxtPath();
 
-      bool message = false;
+      bool message;
       bool once = false;
 
       int lastWritten[6];
-      GetLastWritten(lastWritten);
+      getLastWritten(lastWritten);
 
       if(filePath != txtPath){
 
-        AddToStartUp();
-        UpdateTxt();
+          addToStartUp();
+          updateTxt();
 
-        txtPath = GetTxtPath();
+        txtPath = getTxtPath();
 
         if(filePath != txtPath){
-            MessageBox(NULL, (aError + "\n Code: 0x09").c_str(), "AutoZoom Error", MB_ICONHAND);
+            MessageBox(nullptr, (aError + "\n Code: 0x09").c_str(), "AutoZoom Error", MB_ICONHAND);
             exit(1);
         }
       }
 
-      if(!CheckTxt())
-        ResetTxt(lastWritten);
+      if(!checkTxt())
+          resetTxt(lastWritten);
 
-      message = GetInfo(lastWritten);
+      message = getInfo(lastWritten);
 
       time_t now = time(nullptr);
       tm *ltm = localtime(&now);
@@ -742,12 +751,12 @@ int main(){
           break;
         }
 
-        if(GetLastWritten(lastWritten))
+        if(getLastWritten(lastWritten))
           break;
 
-        auto zoomLinks_i = zoomLinks_list.begin();
-        auto hour_i = hour_list.begin();
-        auto minute_i = minute_list.begin();
+        list<string>::const_iterator zoomLinks_i = zoomLinks_list.begin();
+        list<int>::const_iterator hour_i = hour_list.begin();
+        list<int>::const_iterator minute_i = minute_list.begin();
 
         for(int i = 0; i < zoomLinks_list.size(); i++){
 
@@ -755,12 +764,15 @@ int main(){
             hour = *hour_i;
             minute = *minute_i;
 
-            //cout << linksS << "  " << hour << "   " << minute << endl;
+            if (checkIfLate) {
+                executeIfLate(zoomLinks_i, hour_i, minute_i, now, ltm);
+                checkIfLate = false;
+            }
 
             if(message && !once)
-                once = CheckIfMessage(i, hour, minute, now, ltm, vbsPath);
+                once = checkIfMessage(i, hour, minute, now, ltm, vbsPath);
 
-            if(hour == GetTime("hour", now, ltm) && minute == GetTime("min", now, ltm) && IsToday(i, now, ltm)){
+            if(hour == getTime("hour", now, ltm) && minute == getTime("min", now, ltm) && isToday(i, now, ltm)){
                 ShellExecute(nullptr, "open", linksS.c_str(), nullptr, nullptr, 0);
                 once = false;
                 Sleep(60000);
@@ -774,5 +786,4 @@ int main(){
         Sleep(1000);
       }
   }
-  return 0;
 }

@@ -1,0 +1,5 @@
+C:/Users/super/Desktop/Giovanni/Programacion/Lenguajes/AutoZoom/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/super/Desktop/Giovanni/Programacion/Lenguajes/AutoZoom/cmake-build-debug/CMakeFiles/AutoZoom.dir
+C:/Users/super/Desktop/Giovanni/Programacion/Lenguajes/AutoZoom/cmake-build-debug/CMakeFiles/Deactivate.dir
+C:/Users/super/Desktop/Giovanni/Programacion/Lenguajes/AutoZoom/cmake-build-debug/CMakeFiles/t.dir
+C:/Users/super/Desktop/Giovanni/Programacion/Lenguajes/AutoZoom/cmake-build-debug/CMakeFiles/edit_cache.dir

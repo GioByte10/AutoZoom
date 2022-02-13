@@ -1,7 +1,8 @@
-C:\Users\super\Desktop\Giovanni\Programacion\Lenguajes\AutoZoom\AutoZoom.exe
+*
 *english
 *
-*Please report any problem/bug/suggestion/etc to gvanni.bernal10@gmail.com
+*Please report any problem/bug/suggestion/etc to gvanni.bernal10@gmail.com or fill out this form: https://forms.gle/L7LCvQ3MgRciuaqk8
+*Donations are greatly appreciated :) https://www.paypal.com/paypalme/GioByte10
 *
 *Do not modify any line that has asterisk (*), nor the first line
 *Please maximize the window to see all columns

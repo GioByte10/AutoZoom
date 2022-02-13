@@ -1,0 +1,4 @@
+C:\Users\super\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6461.75\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:/Users/super/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6461.75/bin/ninja/win/ninja.exe -G Ninja C:\Users\super\Desktop\Giovanni\Programacion\Lenguajes\AutoZoom
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/super/Desktop/Giovanni/Programacion/Lenguajes/AutoZoom/cmake-build-debug
