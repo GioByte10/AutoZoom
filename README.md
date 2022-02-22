@@ -16,7 +16,7 @@ In order to do this, the main program, [**_AutoZoom.exe_**](https://github.com/G
 
 | Parameter     | Description   |
 | ------------- |:--------------|
-| Zoom Link     | Must contain **https://** and **zoom** in it                                            |
+| Zoom Link     | Must contain "**https://**" and "**zoom**" in it                                        |
 | Time          | In the 24 hour format; Must contain 4 digits; 2 → hour & 2 → minute.<br>e.g.  →  07:25  |
 | Days          | Days in which the meeting will be joined; Separated by coma<br>e.g.  →  monday, tuesday |
 
@@ -65,7 +65,7 @@ Para hacer esto, el programa principal [**_AutoZoom.exe_**](https://github.com/G
 
 | Parámetro     | Descripción   |
 | ------------- |:--------------|
-| Zoom Link     | Debe contener **https://** y **zoom** en el                                                |
+| Zoom Link     | Debe contener "**https://**" y "**zoom**" en el                                            |
 | Hora          | En el formato de 24 horas; Debe contener 4 dígitos; 2 → hora & 2 → minuto.<br>ej.  →  07:25|
 | Día	          | Días en los cuales se unirá a la reunión; Separados por coma<br>ej.  →  lunes, martes      |
 
