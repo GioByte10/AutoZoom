@@ -10,7 +10,7 @@ If you would like to share any feedback or report a problem, please fill this [e
 Si quisieras compartir retroalimentación o reportar algún problema, por favor llena esta [forma](https://forms.gle/n6eLG34afu7hrVXZ6) en español
 
 ## English
-AutoZoom is a C++ written program that runs in the background, and automatically joins your Zoom meetings by running the Zoom Links. This is the link for the [English Version](https://github.com/GioByte10/AutoZoom/releases/tag/English), and [here](https://www.youtube.com/watch?v=bGYP7srUeGg) you can find a video on how to install it.
+AutoZoom is a C++ written program that runs in the background, and automatically joins your Zoom meetings by running the Zoom Links. This is the link for the [English Version](https://github.com/GioByte10/AutoZoom/releases/tag/English_v1.2.0), and [here](https://www.youtube.com/watch?v=bGYP7srUeGg) you can find a video on how to install it.
 
 In order to do this, the main program, [**_AutoZoom.exe_**](https://github.com/GioByte10/AutoZoom/blob/main/AutoZoom.cpp) adds itself to the Current User's StartUp and acceses the [**_data.txt_**](https://github.com/GioByte10/AutoZoom/blob/main/data.txt) file which contains all information necessary for it to run, this includes:
 
@@ -59,7 +59,7 @@ Each MessageBox() contains a code and description of the error.<br><br>
 <br>
 
 ## Español
-AutoZoom es un programa escrito en C++ que corre en segundo plano, y automáticamente entra a tus reuniones de Zoom ejecutando los Links de Zoom. Este es el link para la [Versión en Español](https://github.com/GioByte10/AutoZoom/releases/tag/Spanish), y [aquí](https://www.youtube.com/watch?v=0aVEMfpQAoo) puede encontrar un video de como instalarlo.
+AutoZoom es un programa escrito en C++ que corre en segundo plano, y automáticamente entra a tus reuniones de Zoom ejecutando los Links de Zoom. Este es el link para la [Versión en Español](https://github.com/GioByte10/AutoZoom/releases/tag/Espanol_v1.2.0), y [aquí](https://www.youtube.com/watch?v=0aVEMfpQAoo) puede encontrar un video de como instalarlo.
 
 Para hacer esto, el programa principal [**_AutoZoom.exe_**](https://github.com/GioByte10/AutoZoom/blob/main/AutoZoom.cpp) se añade a si mismo al StartUp del Usuario Actual y accesa al archivo [**_data.txt_**](https://github.com/GioByte10/AutoZoom/blob/main/data.txt), el cual contiene toda la información necesaria para correr el programa, esto incluye:
 
